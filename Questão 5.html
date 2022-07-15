@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5 - Targer Gustavo</title>
+</head>
+
+<body>
+    <div>
+        <h2>Digite a Palavra para a inversão</h2>
+        <input type="text" id="str">
+        <button onclick="inverteString()">Enviar</button>
+        <div id="comparacao">
+        
+        </div>
+    </div>
+    <script>
+
+        function inverteString() {
+            const str = document.getElementById('str').value;
+            
+            var separaString = str.split("");
+            var viraArray = separaString.reverse();
+            var juntaArray = viraArray.join("");
+
+            const preencher = document.getElementById('comparacao').innerHTML = '<h1>A String digitada é: '+ str+', que invertida fica '+juntaArray+'</h1>';
+        }
+
+    </script>
+
+</body>
+
+</html>

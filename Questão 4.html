@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentagem - Target Gustavo</title>
+</head>
+
+<body>
+
+    <div>
+        <h2>A Soma das Vendas é de :</h2>
+        <div id="soma_valor">
+        </div>
+        <label id="SP"></label>
+        <label id="RJ"></label>
+        <label id="MG"></label>
+        <label id="ES"></label>
+        <label id="Outros"></label>
+    </div>
+    <script>
+        const dados = [
+            {
+                "estado": 'SP',
+                "valor": 67836.43
+            },
+            {
+                "estado": 'RJ',
+                "valor": 36678.66
+            },
+            {
+                "estado": 'MG',
+                "valor": 29229.88
+            },
+            {
+                "estado": 'ES',
+                "valor": 27165.48
+            },
+            {
+                "estado": 'Outros',
+                "valor": 19849.53
+            }
+        ]
+
+        const sumall = dados.map(item => item.valor).reduce((prev, curr) => prev + curr, 0);
+        var total_valor = sumall.toFixed(2);
+
+        const soma_total = document.getElementById('soma_valor').innerHTML = '<h1>R$ '+total_valor+'</h1>';
+        const sp = document.getElementById('SP').innerHTML = '<h1> O valor de SP é de: '+(((dados[0].valor)/total_valor)*100).toFixed(2)+'%</h1>'
+        const rj = document.getElementById('RJ').innerHTML = '<h1> O valor de RJ é de: '+(((dados[1].valor)/total_valor)*100).toFixed(2)+'%</h1>'
+        const mg = document.getElementById('MG').innerHTML = '<h1> O valor de MG é de: '+(((dados[2].valor)/total_valor)*100).toFixed(2)+'%</h1>'
+        const es = document.getElementById('ES').innerHTML = '<h1> O valor de ES é de: '+(((dados[3].valor)/total_valor)*100).toFixed(2)+'%</h1>'
+        const outros = document.getElementById('Outros').innerHTML = '<h1> O valor de Outros é de: '+(((dados[4].valor)/total_valor)*100).toFixed(2)+'%</h1>'
+   </script>
+</body>
+
+</html>

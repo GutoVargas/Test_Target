@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Target (Gustavo)</title>
+</head>
+
+<body>
+
+
+    <div>
+        <label for="">Digite o Número para verificar a Sequência de Fibbonaci</label></br>
+        <input type="text" id="number">
+        <input type="submit" value="Mostar Sequência" onclick="Fibonnaci()">
+        <div id="label-number">
+
+        </div>
+    </div>
+
+    <script>
+        function Fibonnaci() {
+            var numero = document.getElementById("number").value; //Armazena a variavel vinda do Usuario
+            var label = document.getElementById("label-number");
+            label.innerHTML = '<label>Seu Termo é : '+numero+', Por favor cheque o console para ver a sequencia ;)</label>'
+
+            let n1 = 0, n2 = 1, nextTerm;
+            console.log(n1);
+            console.log(n2);
+
+            nextTerm = n1 + n2;
+
+            while (nextTerm < numero) {
+
+                console.log(nextTerm);
+                n1 = n2;
+                n2 = nextTerm;
+                nextTerm = n1 + n2;
+
+            }
+            if (nextTerm == numero) {
+                console.log("Seu termo é "+numero +" e está na sequencia" );
+            } else {
+                console.log("Seu termo é: "+numero +" e não está na sequencia, o próximo termo é: " + nextTerm);
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
